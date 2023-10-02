@@ -1,0 +1,54 @@
+/* header setup starts here */
+.header {
+  color: white;
+  background-image: linear-gradient(#4c99a7 50%, #42899c 50%);
+  width: 100%;
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* header left icons setup */
+.header__left-side {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-left: 10px;
+}
+
+.header__left-side--turn-right {
+  margin-top: -5px;
+}
+.icon {
+  cursor: pointer;
+}
+.time {
+  margin-top: -3px;
+  width: 130px;
+}
+
+.bell {
+  margin-top: -1px;
+}
+
+/* header right side setup */
+.header__right-side {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-right: 10px;
+}
+.header__right-side--user_name {
+  margin-top: -1px;
+  cursor: pointer;
+}
+.menu {
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .icon {
+    display: none;
+  }
+}
