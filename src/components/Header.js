@@ -9,7 +9,7 @@ import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./header.css";
 
-function Header() {
+function Header({ togglelang, toggleSidebar }) {
   // header timer state and setup start
   const [getTime, setTime] = useState(new Date());
   useEffect(() => {
@@ -20,8 +20,19 @@ function Header() {
   });
   // timer setup end
 
+  const setSidebar = () => {
+    toggleSidebar();
+  };
+
   return (
     <div className="header">
+      {/* header left side ends here */}
+
+      <div className="header__right-side">
+        <MenuIcon className="menu" onClick={setSidebar} />
+        <span className="header__right-side--user_name">Abdullah</span>
+      </div>
+
       {/* header left side starts here */}
       <div className="header__left-side">
         <span className="time">
@@ -33,14 +44,8 @@ function Header() {
         <TurnRightIcon className="icon header__left-side--turn-right" />
         <CopyrightIcon className="icon" />
         <NotificationsIcon className="bell icon" />
-        <LanguageIcon className="icon" />
+        <LanguageIcon onClick={togglelang} className="icon" />
         <FullscreenIcon className="icon" />
-      </div>
-      {/* header left side ends here */}
-
-      <div className="header__right-side">
-        <span className="header__right-side--user_name">Abdullah</span>
-        <MenuIcon className="menu" />
       </div>
     </div>
   );

@@ -1,0 +1,25 @@
+.item {
+  /* display: flex !important;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: nowrap; */
+}
+
+.MuiMenuItem-root {
+  border-radius: 8px !important;
+}
+/* .MuiMenuItem-root > .MuiListItemIcon-root */
+.MuiMenuItem-root .MuiSvgIcon-root,
+.MuiMenuItem-root .MuiTypography-root {
+  color: #757575;
+  transition: all 0.3s;
+}
+
+.MuiMenuItem-root:hover .MuiSvgIcon-root,
+.MuiMenuItem-root:hover .MuiTypography-root {
+  color: #000;
+}
+
+.MuiListItemIcon-root:last-of-type {
+  min-width: 20px !important;
+}

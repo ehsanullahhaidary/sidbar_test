@@ -1,0 +1,52 @@
+@import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,,500,600,700,800,900);
+/* .sidebar {
+  font-family: "Inter", sans-serif;
+  position: fixed;
+  top: 34px;
+  display: flex;
+  flex-direction: column;
+  padding: 0px 7px;
+  height: 100vh;
+  background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.hide_sidebar {
+  display: none !important;
+}
+
+.hide {
+  display: flex !important;
+}
+@media (min-width: 600px) {
+  .change {
+    display: flex !important;
+    background-color: aqua;
+  }
+} */
+
+.sidebar {
+  width: 256px;
+  height: calc(100vh - 34px);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #fff;
+  padding: 17px;
+  border-radius: 30px;
+  /* border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px; */
+}
+
+.title {
+  font-size: 10px;
+  font-weight: 500;
+  color: #757575;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.menu {
+  background-color: #757575;
+  width: 100%;
+}
