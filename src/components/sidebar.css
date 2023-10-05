@@ -26,16 +26,72 @@
 } */
 
 .sidebar {
-  width: 256px;
   height: calc(100vh - 34px);
-  display: flex;
+  display: flex !important;
   flex-direction: column;
   gap: 10px;
-  background-color: #fff;
-  padding: 17px;
-  border-radius: 30px;
+
+  overflow-y: scroll;
   /* border-top-right-radius: 30px;
   border-bottom-right-radius: 30px; */
+}
+
+.nav {
+  height: calc(100vh - 34px);
+  width: 290px;
+  display: flex;
+  flex-direction: column;
+  padding: 17px;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 30px;
+  padding-bottom: 20px;
+  transition: width 1s;
+  position: fixed;
+  top: 34px;
+  bottom: 0px;
+}
+
+.hide {
+  transition: width 1s;
+  transform: translateX(-100px);
+  top: 34px;
+
+  width: 0;
+  min-height: 0;
+  height: 0;
+  min-width: none;
+  overflow: hidden;
+  /*  */
+
+  /* display: flex;
+  flex-direction: column;
+  padding: 17px;
+  justify-content: space-between;
+  background-color: #fff;
+  border-radius: 30px;
+  padding-bottom: 20px;
+  transition: width 1s;
+  position: fixed;
+  top: 34px;
+  bottom: 0px; */
+  /* height: 0; */
+}
+
+/* navbar scroll thumb setup */
+.sidebar::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.sidebar:hover::-webkit-scrollbar-thumb {
+  background: #929191;
+}
+
+.sidebar .MuiList-root {
+  display: flex;
+  flex-direction: column;
 }
 
 .title {
@@ -46,7 +102,41 @@
   margin-bottom: 10px;
 }
 
-.menu {
-  background-color: #757575;
-  width: 100%;
+.MuiMenuItem-root,
+.MuiCollapse-root .MuiButtonBase-root {
+  border-radius: 8px !important;
+}
+/* .MuiMenuItem-root > .MuiListItemIcon-root */
+.MuiMenuItem-root .MuiSvgIcon-root,
+.MuiMenuItem-root .MuiTypography-root,
+.sub-menu .MuiTypography-root,
+.MuiButtonBase-root .MuiTypography-root {
+  color: #757575;
+  transition: all 0.3s;
+}
+
+.MuiMenuItem-root:hover .MuiSvgIcon-root,
+.MuiMenuItem-root:hover .MuiTypography-root,
+.MuiCollapse-root:hover .MuiTypography-root {
+  color: #000;
+}
+
+.MuiListItemIcon-root:last-of-type {
+  min-width: 20px !important;
+}
+.MuiDivider-root {
+  margin: 5px 0 !important;
+}
+
+.Mui-selected .MuiTypography-root,
+.Mui-selected .MuiSvgIcon-root,
+.Mui-selected .MuiSvgIcon-root {
+  font-weight: 500;
+  color: #0072e5 !important;
+}
+
+.MuiListSubheader-root {
+  color: #aaaaaa !important;
+  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
 }

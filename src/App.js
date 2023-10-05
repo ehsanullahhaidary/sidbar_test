@@ -1,7 +1,10 @@
 import "./App.css";
-import Sidebar from "./components/sidebar";
+import Sidebar from "./components/Sidebar";
 import Header from "./components/Header";
+import Content from "./components/Content";
+
 import { useState } from "react";
+import { useEffect } from "react";
 
 function App() {
   const [direction, setDirection] = useState(document.body.dir);
@@ -28,13 +31,45 @@ function App() {
       setDirection("rtl");
     }
   };
+
+  // sidebar open/close setup
+  const [openSidebar, setOpenSideBar] = useState();
+
+  const openSidebarHandler = () => {
+    setOpenSideBar(!openSidebar);
+  };
+
+  useEffect(() => {
+    if (window.innerWidth > 500) {
+      setOpenSideBar(true);
+    } else {
+      setOpenSideBar(false);
+    }
+  }, []);
+
+  const openNav = () => {
+    // document.getElementsByClassName("sidebar").style.width = "256px";
+    // document.getElementsByClassName("content").style.marginLeft = "256px";
+  };
+  const closeNav = () => {
+    // document.getElementsByClassName("sidebar").style.width = "0";
+    // document.getElementsByClassName("content").style.marginLeft = "0";
+  };
+
   return (
     <div className="app">
       <Header
         togglelang={toggleDirection}
-        toggleSidebar={handleToggleSideBar}
+        // toggleSidebar={handleToggleSideBar}
+        openSidebarHandler={openSidebarHandler}
       />
-      <Sidebar showSidebar={showSidebar} />
+      <Sidebar
+        openSidebarHandler={openSidebarHandler}
+        openSidebar={openSidebar}
+        showSidebar={showSidebar}
+        setOpenSideBar={setOpenSideBar}
+      />
+      <Content openSidebar={openSidebar} className="content" />
     </div>
   );
 }

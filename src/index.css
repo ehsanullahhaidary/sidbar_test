@@ -89,7 +89,8 @@ code {
 }
 
 ::-webkit-scrollbar-button {
-  height: 3px;
+  height: 10pxpx;
+  width: 0px;
 }
 
 /* Track */
@@ -100,12 +101,6 @@ code {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #929191;
-  border-radius: 10px;
 }
 
-/* navbar scroll thumb setup */
-.navbar::-webkit-scrollbar-thumb {
-  background: white;
-  border-radius: 10px;
-}
 /* scrollbar finished */
