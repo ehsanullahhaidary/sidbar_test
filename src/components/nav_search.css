@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap");
 .sidebar__search--account {
   margin-right: 10px;
   margin-left: -6px;
@@ -10,7 +11,21 @@
 
 .nav-search {
   border: 2px solid white;
-  border-radius: 5px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  /* border-radius: 10px; */
+  border-radius: 28px;
+  margin-bottom: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+.nav-search .MuiFormControl-root .MuiInputBase-root {
+  width: 100%;
+  font-family: "Noto Sans Arabic", sans-serif;
+  /* border-radius: 10px; */
+  border-radius: 28px;
+  /* font-family: "Noto Sans Arabic", sans-serif; */
+}
+
+.MuiFormControl-root {
+  width: 100%;
 }

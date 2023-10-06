@@ -1,4 +1,6 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,,500,600,700,800,900);
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap");
 /* .sidebar {
   font-family: "Inter", sans-serif;
   position: fixed;
@@ -32,6 +34,8 @@
   gap: 10px;
 
   overflow-y: scroll;
+  /* font-family: "IBM Plex Sans Arabic", sans-serif; */
+  font-family: "Noto Sans Arabic", sans-serif;
   /* border-top-right-radius: 30px;
   border-bottom-right-radius: 30px; */
 }
@@ -44,17 +48,17 @@
   padding: 17px;
   justify-content: space-between;
   background-color: #fff;
-  border-radius: 30px;
+  border-radius: 25px;
   padding-bottom: 20px;
-  transition: width 1s;
+  transition: width 0.3s;
   position: fixed;
   top: 34px;
   bottom: 0px;
+  z-index: 1;
 }
 
 .hide {
-  transition: width 1s;
-  transform: translateX(-100px);
+  transition: width 0.3s;
   top: 34px;
 
   width: 0;
@@ -62,7 +66,6 @@
   height: 0;
   min-width: none;
   overflow: hidden;
-  /*  */
 
   /* display: flex;
   flex-direction: column;
@@ -107,12 +110,18 @@
   border-radius: 8px !important;
 }
 /* .MuiMenuItem-root > .MuiListItemIcon-root */
-.MuiMenuItem-root .MuiSvgIcon-root,
+
 .MuiMenuItem-root .MuiTypography-root,
 .sub-menu .MuiTypography-root,
 .MuiButtonBase-root .MuiTypography-root {
   color: #757575;
-  transition: all 0.3s;
+  /* font-family: "IBM Plex Sans Arabic", sans-serif; */
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-size: 15px;
+  transition: width 0.3s;
+}
+.MuiMenuItem-root .MuiSvgIcon-root {
+  color: #757575;
 }
 
 .MuiMenuItem-root:hover .MuiSvgIcon-root,
@@ -133,10 +142,15 @@
 .Mui-selected .MuiSvgIcon-root {
   font-weight: 500;
   color: #0072e5 !important;
+  /* font-family: "IBM Plex Sans Arabic", sans-serif; */
+  font-family: "Noto Sans Arabic", sans-serif;
 }
 
 .MuiListSubheader-root {
   color: #aaaaaa !important;
+  /* font-family: "IBM Plex Sans Arabic", sans-serif; */
+  font-family: "Noto Sans Arabic", sans-serif;
+  font-size: 12px;
   /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
     rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
 }

@@ -3,8 +3,14 @@
   width: 100%;
   height: 100vh;
   transition: margin 0.5s;
+  overflow: hidden;
 }
 .margin {
   margin-right: 290px;
   width: calc(100% - 290px);
+}
+
+.darken {
+  opacity: 0.5;
+  background-color: #00000040;
 }
