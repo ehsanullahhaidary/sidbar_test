@@ -69,7 +69,11 @@ function App() {
         showSidebar={showSidebar}
         setOpenSideBar={setOpenSideBar}
       />
-      <Content openSidebar={openSidebar} className="content" />
+      <Content
+        setOpenSideBar={setOpenSideBar}
+        openSidebar={openSidebar}
+        className="content"
+      />
     </div>
   );
 }

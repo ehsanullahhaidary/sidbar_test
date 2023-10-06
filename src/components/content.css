@@ -4,6 +4,7 @@
   height: 100vh;
   transition: margin 0.5s;
   overflow: hidden;
+  transition: opacity 0.3;
 }
 .margin {
   margin-right: 290px;

@@ -3,7 +3,7 @@ import "./content.css";
 import { useEffect } from "react";
 import { useState } from "react";
 
-function Content({ openSidebar }) {
+function Content({ openSidebar, setOpenSideBar }) {
   const [mobileSize, setMobileSize] = useState(false);
   useEffect(() => {
     if (window.innerWidth < 500) {
@@ -19,6 +19,11 @@ function Content({ openSidebar }) {
   console.log(mobileSize);
   return (
     <div
+      onClick={() => {
+        if (openSidebar === true && window.innerWidth < 500) {
+          setOpenSideBar(false);
+        }
+      }}
       className={
         mobileSize
           ? "darken content"
