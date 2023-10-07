@@ -10,9 +10,11 @@
   flex-wrap: wrap;
   gap: 25px;
 }
-.margin {
-  margin-right: 290px;
-  width: calc(100% - 290px);
+@media (min-width: 500px) {
+  .margin {
+    margin-right: 290px;
+    width: calc(100% - 290px);
+  }
 }
 
 .darken {
