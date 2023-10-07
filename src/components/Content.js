@@ -2,6 +2,7 @@ import React from "react";
 import "./content.css";
 import { useEffect } from "react";
 import { useState } from "react";
+import VideoContainer from "./videoSection/VideoContainer";
 
 function Content({ openSidebar, setOpenSideBar }) {
   const [mobileSize, setMobileSize] = useState(false);
@@ -22,6 +23,7 @@ function Content({ openSidebar, setOpenSideBar }) {
       onClick={() => {
         if (openSidebar === true && window.innerWidth < 500) {
           setOpenSideBar(false);
+          console.log("first");
         }
       }}
       className={
@@ -32,7 +34,20 @@ function Content({ openSidebar, setOpenSideBar }) {
           : "content"
       }
     >
-      ContentContentContentContentContentContentContent
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
+      <VideoContainer />
     </div>
   );
 }

@@ -1,9 +1,9 @@
 /* header setup starts here */
 .header {
-  color: white;
-  background-image: linear-gradient(#4c99a7 50%, #42899c 50%);
+  color: #757575;
+  /* background-image: linear-gradient(#4c99a7 50%, #42899c 50%); */
   width: 100%;
-  height: 34px;
+  height: 44px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -12,6 +12,7 @@
   top: 0;
   right: 0;
   left: 0;
+  z-index: 1;
 }
 
 /* header left icons setup */
