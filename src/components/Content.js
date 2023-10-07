@@ -1,10 +1,11 @@
 import React from "react";
-import "./content.css";
+import "./Content.css";
 import { useEffect } from "react";
 import { useState } from "react";
-import VideoContainer from "./videoSection/VideoContainer";
+import VideoContainer from "./VideoSection/VideoContainer";
 
 function Content({ openSidebar, setOpenSideBar }) {
+  // setup for mobile size and pc sizes to set dark screen on contents or not
   const [mobileSize, setMobileSize] = useState(false);
   useEffect(() => {
     if (window.innerWidth < 500) {
@@ -17,13 +18,12 @@ function Content({ openSidebar, setOpenSideBar }) {
       setMobileSize(false);
     }
   }, [openSidebar]);
-  console.log(mobileSize);
+
   return (
     <div
       onClick={() => {
         if (openSidebar === true && window.innerWidth < 500) {
           setOpenSideBar(false);
-          console.log("first");
         }
       }}
       className={
@@ -34,6 +34,7 @@ function Content({ openSidebar, setOpenSideBar }) {
           : "content"
       }
     >
+      {/* videos with description ... */}
       <VideoContainer />
       <VideoContainer />
       <VideoContainer />

@@ -1,12 +1,13 @@
 import React from "react";
 
-import "./nav_search.css";
+import "./NavSearch.css";
 import { InputAdornment, TextField } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 function NavSearch() {
   return (
     <div className="nav-search">
+      {/* the search input at top of sidebar */}
       <TextField
         className="change-icon-direction sidebar__search"
         id="outlined-basic"

@@ -1,47 +1,9 @@
 @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,,500,600,700,800,900);
-@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@300;400;500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;600;700;800;900&display=swap");
-/* .sidebar {
-  font-family: "Inter", sans-serif;
-  position: fixed;
-  top: 34px;
-  display: flex;
-  flex-direction: column;
-  padding: 0px 7px;
-  height: 100vh;
-  background-color: white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
-.hide_sidebar {
-  display: none !important;
-}
-
-.hide {
-  display: flex !important;
-}
-@media (min-width: 600px) {
-  .change {
-    display: flex !important;
-    background-color: aqua;
-  }
-} */
-
-.sidebar {
-  height: calc(100vh - 34px);
-  display: flex !important;
-  flex-direction: column;
-  gap: 10px;
-
-  overflow-y: scroll;
-  /* font-family: "IBM Plex Sans Arabic", sans-serif; */
-  font-family: "Noto Sans Arabic", sans-serif;
-  /* border-top-right-radius: 30px;
-  border-bottom-right-radius: 30px; */
-}
-
+/* sidebar main div */
 .nav {
-  height: calc(100vh - 34px);
+  height: calc(100vh - 44px);
   width: 290px;
   display: flex;
   flex-direction: column;
@@ -54,35 +16,34 @@
   position: fixed;
   top: 44px;
   bottom: 0px;
-  z-index: 2;
+  z-index: 5;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 }
 
+/* clickable buttons on sidebar */
+.sidebar {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  transition: width 0.3s;
+  overflow-y: scroll;
+  font-family: "Noto Sans Arabic", sans-serif;
+}
+
+/* class that hides sidebar */
 .hide {
   transition: width 0.3s;
   top: 34px;
-
   width: 0;
   min-height: 0;
   height: 0;
   min-width: none;
   overflow: hidden;
-
-  /* display: flex;
-  flex-direction: column;
-  padding: 17px;
-  justify-content: space-between;
-  background-color: #fff;
-  border-radius: 30px;
-  padding-bottom: 20px;
-  transition: width 1s;
-  position: fixed;
-  top: 34px;
-  bottom: 0px; */
-  /* height: 0; */
 }
 
-/* navbar scroll thumb setup */
+/* navbar scroll setup start */
 .sidebar::-webkit-scrollbar-thumb {
   background: white;
   border-radius: 10px;
@@ -92,12 +53,14 @@
 .sidebar:hover::-webkit-scrollbar-thumb {
   background: #929191;
 }
+/* navbar scroll setup end */
 
 .sidebar .MuiList-root {
   display: flex;
   flex-direction: column;
 }
 
+/* sidebar titles setup */
 .title {
   font-size: 10px;
   font-weight: 500;
@@ -106,25 +69,27 @@
   margin-bottom: 10px;
 }
 
+/* sidebar items border */
 .MuiMenuItem-root,
 .MuiCollapse-root .MuiButtonBase-root {
   border-radius: 8px !important;
 }
-/* .MuiMenuItem-root > .MuiListItemIcon-root */
 
+/* text of sidebar items */
 .MuiMenuItem-root .MuiTypography-root,
 .sub-menu .MuiTypography-root,
 .MuiButtonBase-root .MuiTypography-root {
   color: #757575;
-  /* font-family: "IBM Plex Sans Arabic", sans-serif; */
   font-family: "Noto Sans Arabic", sans-serif;
   font-size: 15px;
   transition: width 0.3s;
 }
+
 .MuiMenuItem-root .MuiSvgIcon-root {
   color: #757575;
 }
 
+/* sidebar items hover setup */
 .MuiMenuItem-root:hover .MuiSvgIcon-root,
 .MuiMenuItem-root:hover .MuiTypography-root,
 .MuiCollapse-root:hover .MuiTypography-root {
@@ -138,20 +103,18 @@
   margin: 5px 0 !important;
 }
 
+/* selected item setup */
 .Mui-selected .MuiTypography-root,
 .Mui-selected .MuiSvgIcon-root,
 .Mui-selected .MuiSvgIcon-root {
   font-weight: 500;
   color: #0072e5 !important;
-  /* font-family: "IBM Plex Sans Arabic", sans-serif; */
   font-family: "Noto Sans Arabic", sans-serif;
 }
 
+/* sidebar header setup */
 .MuiListSubheader-root {
   color: #aaaaaa !important;
-  /* font-family: "IBM Plex Sans Arabic", sans-serif; */
   font-family: "Noto Sans Arabic", sans-serif;
   font-size: 12px;
-  /* box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
-    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px; */
 }

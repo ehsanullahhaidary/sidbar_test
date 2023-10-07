@@ -1,12 +1,13 @@
 import "./App.css";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
+import Sidebar from "./components/SidebarSection/Sidebar";
+import Header from "./components/HeaderSection/Header";
 import Content from "./components/Content";
 
 import { useState } from "react";
 import { useEffect } from "react";
 
 function App() {
+  // screen direction useState
   const [direction, setDirection] = useState(document.body.dir);
 
   // menu click handler for nav
@@ -17,10 +18,7 @@ function App() {
     setShowSidebar(!showSidebar);
   };
 
-  // useEffect(() => {
-  //   //Runs only on the first render
-  // }, [showSidebar]);
-
+  // screen direction rtl/ltr setup
   const toggleDirection = () => {
     if (document.body.dir == "rtl") {
       document.body.dir = "ltr";
@@ -34,7 +32,6 @@ function App() {
 
   // sidebar open/close setup
   const [openSidebar, setOpenSideBar] = useState();
-
   const openSidebarHandler = () => {
     setOpenSideBar(!openSidebar);
   };
@@ -47,20 +44,10 @@ function App() {
     }
   }, []);
 
-  const openNav = () => {
-    // document.getElementsByClassName("sidebar").style.width = "256px";
-    // document.getElementsByClassName("content").style.marginLeft = "256px";
-  };
-  const closeNav = () => {
-    // document.getElementsByClassName("sidebar").style.width = "0";
-    // document.getElementsByClassName("content").style.marginLeft = "0";
-  };
-
   return (
     <div className="app">
       <Header
         togglelang={toggleDirection}
-        // toggleSidebar={handleToggleSideBar}
         openSidebarHandler={openSidebarHandler}
       />
       <Sidebar

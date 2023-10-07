@@ -7,7 +7,7 @@ import NotificationsIcon from "@mui/icons-material/Notifications";
 import LanguageIcon from "@mui/icons-material/Language";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import MenuIcon from "@mui/icons-material/Menu";
-import "./header.css";
+import "./Header.css";
 
 function Header({ togglelang, toggleSidebar, openSidebarHandler }) {
   // header timer state and setup start
@@ -20,18 +20,15 @@ function Header({ togglelang, toggleSidebar, openSidebarHandler }) {
   });
   // timer setup end
 
-  const setSidebar = () => {
-    toggleSidebar();
-  };
-
   return (
     <div className="header">
-      {/* header left side ends here */}
-
+      {/* header right side starts here */}
       <div className="header__right-side">
         <MenuIcon className="menu" onClick={openSidebarHandler} />
         <span className="header__right-side--user_name">Abdullah</span>
       </div>
+
+      {/* header right side ends here */}
 
       {/* header left side starts here */}
       <div className="header__left-side">
@@ -47,6 +44,7 @@ function Header({ togglelang, toggleSidebar, openSidebarHandler }) {
         <LanguageIcon onClick={togglelang} className="icon" />
         <FullscreenIcon className="icon" />
       </div>
+      {/* header left side ends here */}
     </div>
   );
 }

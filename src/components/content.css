@@ -1,15 +1,19 @@
+/* main content on screen */
 .content {
   padding: 50px 20px;
   width: 100%;
   height: 100vh;
-  transition: margin 0.5s;
+  transition: all 0.3s;
   overflow-x: hidden;
   transition: opacity 0.3;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 25px;
 }
+
+/* big screens main content margin */
 @media (min-width: 500px) {
   .margin {
     margin-right: 290px;
@@ -17,6 +21,7 @@
   }
 }
 
+/* content get dark when sidebar opens in mobile sizes */
 .darken {
   opacity: 0.5;
   background-color: #00000040;

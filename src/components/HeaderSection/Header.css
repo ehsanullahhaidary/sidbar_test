@@ -1,7 +1,6 @@
 /* header setup starts here */
 .header {
   color: #757575;
-  /* background-image: linear-gradient(#4c99a7 50%, #42899c 50%); */
   width: 100%;
   height: 44px;
   display: flex;
@@ -12,7 +11,8 @@
   top: 0;
   right: 0;
   left: 0;
-  z-index: 3;
+  z-index: 5;
+  background-color: white;
 }
 
 /* header left icons setup */
@@ -23,17 +23,23 @@
   gap: 9px;
 }
 
+/* header left side turn right icon */
 .header__left-side--turn-right {
   margin-top: -5px;
 }
+
+/* header icons setup */
 .icon {
   cursor: pointer;
 }
+
+/* timer in header */
 .time {
   margin-top: -3px;
   width: 125px;
 }
 
+/* bell icon: notifications */
 .bell {
   margin-top: -1px;
 }
@@ -45,18 +51,22 @@
 
   margin-right: 10px;
 }
+
+/* username */
 .header__right-side--user_name {
   margin-top: -1px;
   cursor: pointer;
 }
+
+/* menu icon setup */
 .menu {
   cursor: pointer;
   margin: 0 10px;
 }
 
+/* media for small sizes */
 @media (max-width: 480px) {
   .icon {
     display: none !important;
-    background-color: blueviolet;
   }
 }
