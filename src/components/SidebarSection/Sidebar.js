@@ -232,35 +232,39 @@ function Sidebar({ openSidebar, openSidebarHandler }) {
             <ListItemText>بک اپ</ListItemText>
           </MenuItem>
           <Divider className="devider" />
+
+          {/* sidebar bottom header */}
+          <ListSubheader component="div" id="nested-list-subheader">
+            معلومات
+          </ListSubheader>
+
+          {/* sidebar bottom item */}
+          <MenuItem
+            selected={selectedIndex === 5}
+            onClick={(event) => handleListItemClick(event, 5)}
+          >
+            <ListItemIcon>
+              <Info fontSize="small" />
+            </ListItemIcon>
+            <ListItemText>معلومات</ListItemText>
+          </MenuItem>
+
+          {/* devider between  */}
+          <Divider className="devider" />
+
+          {/* sidebar bottom item */}
+          <MenuItem
+            className="exit"
+            selected={selectedIndex === 6}
+            onClick={(event) => handleListItemClick(event, 6)}
+          >
+            <ListItemIcon>
+              <Logout fontSize="small" />
+            </ListItemIcon>
+            <ListItemText>خروج</ListItemText>
+          </MenuItem>
         </List>
       </div>
-
-      {/* sidebar bottom header */}
-      <ListSubheader component="div" id="nested-list-subheader">
-        معلومات
-      </ListSubheader>
-
-      {/* sidebar bottom item */}
-      <MenuItem
-        selected={selectedIndex === 5}
-        onClick={(event) => handleListItemClick(event, 5)}
-      >
-        <ListItemIcon>
-          <Info fontSize="small" />
-        </ListItemIcon>
-        <ListItemText>معلومات</ListItemText>
-      </MenuItem>
-
-      {/* sidebar bottom item */}
-      <MenuItem
-        selected={selectedIndex === 6}
-        onClick={(event) => handleListItemClick(event, 6)}
-      >
-        <ListItemIcon>
-          <Logout fontSize="small" />
-        </ListItemIcon>
-        <ListItemText>خروج</ListItemText>
-      </MenuItem>
     </div>
   );
 }

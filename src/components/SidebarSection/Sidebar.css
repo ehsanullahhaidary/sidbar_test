@@ -3,7 +3,7 @@
 
 /* sidebar main div */
 .nav {
-  height: calc(100vh - 44px);
+  height: calc(100% - 44px);
   width: 290px;
   display: flex;
   flex-direction: column;
@@ -60,15 +60,6 @@
   flex-direction: column;
 }
 
-/* sidebar titles setup */
-.title {
-  font-size: 10px;
-  font-weight: 500;
-  color: #757575;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
 /* sidebar items border */
 .MuiMenuItem-root,
 .MuiCollapse-root .MuiButtonBase-root {
@@ -100,7 +91,7 @@
   min-width: 20px !important;
 }
 .MuiDivider-root {
-  margin: 5px 0 !important;
+  /* margin: 5px 0 !important; */
 }
 
 /* selected item setup */
@@ -117,4 +108,10 @@
   color: #aaaaaa !important;
   font-family: "Noto Sans Arabic", sans-serif;
   font-size: 12px;
+  margin-top: 10px;
+}
+
+/* exit button */
+.exit {
+  margin-bottom: 50px !important;
 }
