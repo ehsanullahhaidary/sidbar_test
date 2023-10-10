@@ -28,10 +28,10 @@ function Content({ openSidebar, setOpenSideBar }) {
       }}
       className={
         mobileSize
-          ? "darken content"
-          : "content" && openSidebar
-          ? "content margin"
-          : "content"
+          ? "darken main-content"
+          : "main-content" && openSidebar
+          ? "main-content margin"
+          : "main-content"
       }
     >
       {/* videos with description ... */}
