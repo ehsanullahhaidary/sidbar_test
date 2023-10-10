@@ -76,6 +76,13 @@
   transition: width 0.3s;
 }
 
+a {
+  text-decoration: none;
+}
+.MuiDivider-root {
+  margin: 8px 0 !important;
+}
+
 .MuiMenuItem-root .MuiSvgIcon-root {
   color: #757575;
 }

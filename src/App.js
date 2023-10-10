@@ -5,6 +5,18 @@ import Content from "./components/Content";
 
 import { useState } from "react";
 import { useEffect } from "react";
+import { Routes, Route, BrowserRouter } from "react-router-dom";
+import ErrorPage from "./components/ErrorSection/ErrorPage";
+import Settings from "./components/testComponents/Settings";
+import Ehsan from "./components/testComponents/Ehsan";
+import Nasim from "./components/testComponents/Nasim";
+import Mustafa from "./components/testComponents/Mustafa";
+import Hamid from "./components/testComponents/Hamid";
+import Raziq from "./components/testComponents/Raziq";
+import Ahmad from "./components/testComponents/Ahmad";
+import BackUp from "./components/testComponents/BackUp";
+import Info from "./components/testComponents/Info";
+import Exit from "./components/testComponents/Exit";
 
 function App() {
   // screen direction useState
@@ -46,21 +58,116 @@ function App() {
 
   return (
     <div className="app">
-      <Header
-        togglelang={toggleDirection}
-        openSidebarHandler={openSidebarHandler}
-      />
-      <Sidebar
-        openSidebarHandler={openSidebarHandler}
-        openSidebar={openSidebar}
-        showSidebar={showSidebar}
-        setOpenSideBar={setOpenSideBar}
-      />
-      <Content
-        setOpenSideBar={setOpenSideBar}
-        openSidebar={openSidebar}
-        className="content"
-      />
+      <BrowserRouter>
+        <Header
+          togglelang={toggleDirection}
+          openSidebarHandler={openSidebarHandler}
+        />
+        <Sidebar
+          openSidebarHandler={openSidebarHandler}
+          openSidebar={openSidebar}
+          showSidebar={showSidebar}
+          setOpenSideBar={setOpenSideBar}
+        />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Content
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+                className="content"
+              />
+            }
+          />
+          <Route
+            path="/ehsan"
+            element={
+              <Ehsan
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
+            }
+          />
+          <Route
+            path="/nasim"
+            element={
+              <Nasim
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
+            }
+          />
+          <Route
+            path="/mustafa"
+            element={
+              <Mustafa
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <Settings
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
+            }
+          />
+          <Route
+            path="/hamid"
+            element={
+              <Hamid
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
+            }
+          />
+          <Route
+            path="/raziq"
+            element={
+              <Raziq
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
+            }
+          />
+          <Route
+            path="/ahmad"
+            element={
+              <Ahmad
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
+            }
+          />
+          <Route
+            path="/backup"
+            element={
+              <BackUp
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
+            }
+          />
+          <Route
+            path="/info"
+            element={
+              <Info setOpenSideBar={setOpenSideBar} openSidebar={openSidebar} />
+            }
+          />
+          <Route
+            path="/exit"
+            element={
+              <Exit setOpenSideBar={setOpenSideBar} openSidebar={openSidebar} />
+            }
+          />
+
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

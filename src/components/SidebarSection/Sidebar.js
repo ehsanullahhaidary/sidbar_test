@@ -21,6 +21,7 @@ import {
 } from "@mui/material";
 import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Sidebar({ openSidebar, openSidebarHandler }) {
   // selected setup
@@ -80,15 +81,17 @@ function Sidebar({ openSidebar, openSidebarHandler }) {
           </ListSubheader>
 
           {/* sidebar item */}
-          <MenuItem
-            selected={selectedIndex === 0}
-            onClick={(event) => handleListItemClick(event, 0)}
-          >
-            <ListItemIcon>
-              <DashboardIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText>دشبورد</ListItemText>
-          </MenuItem>
+          <Link to={"/"}>
+            <MenuItem
+              selected={selectedIndex === 0}
+              onClick={(event) => handleListItemClick(event, 0)}
+            >
+              <ListItemIcon>
+                <DashboardIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText>دشبورد</ListItemText>
+            </MenuItem>
+          </Link>
 
           {/* devider between sidebar items*/}
           <Divider className="devider" />
@@ -111,40 +114,45 @@ function Sidebar({ openSidebar, openSidebarHandler }) {
           </MenuItem>
 
           {/* sidebar three collapsable items */}
-          <Collapse in={opendevs} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton
-                selected={selectedIndex === 11}
-                onClick={(event) => handleListItemClick(event, 11)}
-                sx={{ textAlign: "start" }}
-              >
-                <ListItemText primary="احسان الله" />
-              </ListItemButton>
-            </List>
-          </Collapse>
-          <Collapse in={opendevs} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton
-                selected={selectedIndex === 12}
-                onClick={(event) => handleListItemClick(event, 12)}
-                sx={{ textAlign: "start" }}
-              >
-                <ListItemText primary="نسیم" />
-              </ListItemButton>
-            </List>
-          </Collapse>
-          <Collapse in={opendevs} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton
-                selected={selectedIndex === 13}
-                onClick={(event) => handleListItemClick(event, 13)}
-                sx={{ textAlign: "start" }}
-              >
-                <ListItemText primary="مصطفی" />
-              </ListItemButton>
-            </List>
-          </Collapse>
-
+          <Link to={"/ehsan"}>
+            <Collapse in={opendevs} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton
+                  selected={selectedIndex === 11}
+                  onClick={(event) => handleListItemClick(event, 11)}
+                  sx={{ textAlign: "start" }}
+                >
+                  <ListItemText primary="احسان الله" />
+                </ListItemButton>
+              </List>
+            </Collapse>
+          </Link>
+          <Link to={"/nasim"}>
+            <Collapse in={opendevs} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton
+                  selected={selectedIndex === 12}
+                  onClick={(event) => handleListItemClick(event, 12)}
+                  sx={{ textAlign: "start" }}
+                >
+                  <ListItemText primary="نسیم" />
+                </ListItemButton>
+              </List>
+            </Collapse>
+          </Link>
+          <Link to={"/mustafa"}>
+            <Collapse in={opendevs} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton
+                  selected={selectedIndex === 13}
+                  onClick={(event) => handleListItemClick(event, 13)}
+                  sx={{ textAlign: "start" }}
+                >
+                  <ListItemText primary="مصطفی" />
+                </ListItemButton>
+              </List>
+            </Collapse>
+          </Link>
           {/* devider between items : the line */}
           <Divider className="devider" />
 
@@ -154,15 +162,17 @@ function Sidebar({ openSidebar, openSidebarHandler }) {
           </ListSubheader>
 
           {/* sidebar item */}
-          <MenuItem
-            selected={selectedIndex === 2}
-            onClick={(event) => handleListItemClick(event, 2)}
-          >
-            <ListItemIcon>
-              <TuneIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText>تنظیمات</ListItemText>
-          </MenuItem>
+          <Link to={"/settings"}>
+            <MenuItem
+              selected={selectedIndex === 2}
+              onClick={(event) => handleListItemClick(event, 2)}
+            >
+              <ListItemIcon>
+                <TuneIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText>تنظیمات</ListItemText>
+            </MenuItem>
+          </Link>
           <Divider className="devider" />
 
           {/* sidebar item */}
@@ -183,54 +193,61 @@ function Sidebar({ openSidebar, openSidebarHandler }) {
             </ListItemIcon>
           </MenuItem>
           {/* sidebar collapsable item */}
-
-          <Collapse in={opensecond} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton
-                selected={selectedIndex === 31}
-                onClick={(event) => handleListItemClick(event, 31)}
-                sx={{ textAlign: "start" }}
-              >
-                <ListItemText primary="احسان الله" />
-              </ListItemButton>
-            </List>
-          </Collapse>
-          <Collapse in={opensecond} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton
-                selected={selectedIndex === 32}
-                onClick={(event) => handleListItemClick(event, 32)}
-                sx={{ textAlign: "start" }}
-              >
-                <ListItemText primary="نسیم" />
-              </ListItemButton>
-            </List>
-          </Collapse>
-          <Collapse in={opensecond} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton
-                selected={selectedIndex === 33}
-                onClick={(event) => handleListItemClick(event, 33)}
-                sx={{ textAlign: "start" }}
-              >
-                <ListItemText primary="مصطفی" />
-              </ListItemButton>
-            </List>
-          </Collapse>
+          <Link to={"/hamid"}>
+            <Collapse in={opensecond} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton
+                  selected={selectedIndex === 31}
+                  onClick={(event) => handleListItemClick(event, 31)}
+                  sx={{ textAlign: "start" }}
+                >
+                  <ListItemText primary="عبدالحمید" />
+                </ListItemButton>
+              </List>
+            </Collapse>
+          </Link>
+          <Link to={"/raziq"}>
+            <Collapse in={opensecond} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton
+                  selected={selectedIndex === 32}
+                  onClick={(event) => handleListItemClick(event, 32)}
+                  sx={{ textAlign: "start" }}
+                >
+                  <ListItemText primary="عبدالرازق" />
+                </ListItemButton>
+              </List>
+            </Collapse>
+          </Link>
+          <Link to={"/ahmad"}>
+            <Collapse in={opensecond} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton
+                  selected={selectedIndex === 33}
+                  onClick={(event) => handleListItemClick(event, 33)}
+                  sx={{ textAlign: "start" }}
+                >
+                  <ListItemText primary="احمد" />
+                </ListItemButton>
+              </List>
+            </Collapse>
+          </Link>
 
           {/* sidebar devider */}
           <Divider className="devider" />
 
           {/* sidebar item */}
-          <MenuItem
-            selected={selectedIndex === 4}
-            onClick={(event) => handleListItemClick(event, 4)}
-          >
-            <ListItemIcon>
-              <BackupIcon fontSize="small" />
-            </ListItemIcon>
-            <ListItemText>بک اپ</ListItemText>
-          </MenuItem>
+          <Link to={"/backup"}>
+            <MenuItem
+              selected={selectedIndex === 4}
+              onClick={(event) => handleListItemClick(event, 4)}
+            >
+              <ListItemIcon>
+                <BackupIcon fontSize="small" />
+              </ListItemIcon>
+              <ListItemText>بک اپ</ListItemText>
+            </MenuItem>
+          </Link>
           <Divider className="devider" />
 
           {/* sidebar bottom header */}
@@ -239,30 +256,34 @@ function Sidebar({ openSidebar, openSidebarHandler }) {
           </ListSubheader>
 
           {/* sidebar bottom item */}
-          <MenuItem
-            selected={selectedIndex === 5}
-            onClick={(event) => handleListItemClick(event, 5)}
-          >
-            <ListItemIcon>
-              <Info fontSize="small" />
-            </ListItemIcon>
-            <ListItemText>معلومات</ListItemText>
-          </MenuItem>
+          <Link to={"/info"}>
+            <MenuItem
+              selected={selectedIndex === 5}
+              onClick={(event) => handleListItemClick(event, 5)}
+            >
+              <ListItemIcon>
+                <Info fontSize="small" />
+              </ListItemIcon>
+              <ListItemText>معلومات</ListItemText>
+            </MenuItem>
+          </Link>
 
           {/* devider between  */}
           <Divider className="devider" />
 
           {/* sidebar bottom item */}
-          <MenuItem
-            className="exit"
-            selected={selectedIndex === 6}
-            onClick={(event) => handleListItemClick(event, 6)}
-          >
-            <ListItemIcon>
-              <Logout fontSize="small" />
-            </ListItemIcon>
-            <ListItemText>خروج</ListItemText>
-          </MenuItem>
+          <Link to={"/exit"}>
+            <MenuItem
+              className="exit"
+              selected={selectedIndex === 6}
+              onClick={(event) => handleListItemClick(event, 6)}
+            >
+              <ListItemIcon>
+                <Logout fontSize="small" />
+              </ListItemIcon>
+              <ListItemText>خروج</ListItemText>
+            </MenuItem>
+          </Link>
         </List>
       </div>
     </div>
