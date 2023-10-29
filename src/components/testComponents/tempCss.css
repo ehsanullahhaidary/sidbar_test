@@ -28,6 +28,10 @@
     margin-right: 290px;
     width: calc(100% - 290px);
   }
+  .margin-left {
+    margin-left: 290px;
+    width: calc(100% - 290px);
+  }
 }
 
 /* content get dark when sidebar opens in mobile sizes */

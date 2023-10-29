@@ -3,7 +3,7 @@ import "./tempCss.css";
 import { useEffect } from "react";
 import { useState } from "react";
 
-function BackUp({ openSidebar, setOpenSideBar }) {
+function BackUp({ openSidebar, setOpenSideBar, direction }) {
   // setup for mobile size and pc sizes to set dark screen on contents or not
   const [mobileSize, setMobileSize] = useState(false);
   useEffect(() => {
@@ -28,8 +28,10 @@ function BackUp({ openSidebar, setOpenSideBar }) {
       className={
         mobileSize
           ? "darken content"
-          : "content" && openSidebar
+          : "content" && openSidebar && direction === "rtl"
           ? "content margin"
+          : "content" && openSidebar && direction === "ltr"
+          ? "content margin-left"
           : "content"
       }
     >

@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import VideoContainer from "./VideoSection/VideoContainer";
 
-function Content({ openSidebar, setOpenSideBar }) {
+function Content({ openSidebar, setOpenSideBar, direction }) {
   // setup for mobile size and pc sizes to set dark screen on contents or not
   const [mobileSize, setMobileSize] = useState(false);
   useEffect(() => {
@@ -29,8 +29,10 @@ function Content({ openSidebar, setOpenSideBar }) {
       className={
         mobileSize
           ? "darken main-content"
-          : "main-content" && openSidebar
+          : "main-content" && openSidebar && direction === "rtl"
           ? "main-content margin"
+          : "main-content" && openSidebar && direction === "ltr"
+          ? "main-content margin-left"
           : "main-content"
       }
     >

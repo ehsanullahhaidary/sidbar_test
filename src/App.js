@@ -32,7 +32,7 @@ function App() {
 
   // screen direction rtl/ltr setup
   const toggleDirection = () => {
-    if (document.body.dir == "rtl") {
+    if (document.body.dir === "rtl") {
       document.body.dir = "ltr";
       setDirection("ltr");
       return;
@@ -74,6 +74,7 @@ function App() {
             path="/"
             element={
               <Content
+                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
                 className="content"
@@ -84,6 +85,7 @@ function App() {
             path="/ehsan"
             element={
               <Ehsan
+                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
               />
@@ -93,6 +95,7 @@ function App() {
             path="/nasim"
             element={
               <Nasim
+                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
               />
@@ -102,6 +105,7 @@ function App() {
             path="/mustafa"
             element={
               <Mustafa
+                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
               />
@@ -111,6 +115,7 @@ function App() {
             path="/settings"
             element={
               <Settings
+                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
               />
@@ -120,6 +125,7 @@ function App() {
             path="/hamid"
             element={
               <Hamid
+                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
               />
@@ -129,6 +135,7 @@ function App() {
             path="/raziq"
             element={
               <Raziq
+                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
               />
@@ -138,6 +145,7 @@ function App() {
             path="/ahmad"
             element={
               <Ahmad
+                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
               />
@@ -147,6 +155,7 @@ function App() {
             path="/backup"
             element={
               <BackUp
+                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
               />
@@ -155,13 +164,21 @@ function App() {
           <Route
             path="/info"
             element={
-              <Info setOpenSideBar={setOpenSideBar} openSidebar={openSidebar} />
+              <Info
+                direction={direction}
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
             }
           />
           <Route
             path="/exit"
             element={
-              <Exit setOpenSideBar={setOpenSideBar} openSidebar={openSidebar} />
+              <Exit
+                direction={direction}
+                setOpenSideBar={setOpenSideBar}
+                openSidebar={openSidebar}
+              />
             }
           />
 
