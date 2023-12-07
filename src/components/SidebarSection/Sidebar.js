@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./Sidebar.css";
 import NavSearch from "../NavSearchSection/NavSearch";
 import DashboardIcon from "@mui/icons-material/Dashboard";
@@ -8,6 +8,7 @@ import BackupIcon from "@mui/icons-material/Backup";
 import CodeIcon from "@mui/icons-material/Code";
 import { Info } from "@mui/icons-material";
 import { Logout } from "@mui/icons-material";
+import AuthContext from "../../store/auth-context";
 
 import {
   Collapse,
@@ -23,7 +24,7 @@ import { ExpandLess, ExpandMore, StarBorder } from "@mui/icons-material";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function Sidebar({ openSidebar, openSidebarHandler }) {
+function Sidebar() {
   // selected setup
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   const [opendevs, setOpendevs] = React.useState(false);
@@ -32,6 +33,8 @@ function Sidebar({ openSidebar, openSidebarHandler }) {
   const handleListItemClick = (event, index) => {
     setSelectedIndex(index);
   };
+
+  const ctx = useContext(AuthContext);
 
   // collapse open/close setup
   const handleClickdevs = () => {
@@ -51,12 +54,12 @@ function Sidebar({ openSidebar, openSidebarHandler }) {
   useEffect(() => {
     window.addEventListener("resize", getSize);
     if (width < 500) {
-      if (openSidebar == true) {
-        openSidebarHandler();
+      if (ctx.openSidebar) {
+        ctx.openSidebarHandler();
       }
     } else {
-      if (openSidebar == false) {
-        openSidebarHandler();
+      if (!ctx.openSidebar) {
+        ctx.openSidebarHandler();
       }
     }
     return () => {
@@ -65,7 +68,7 @@ function Sidebar({ openSidebar, openSidebarHandler }) {
   }, [window.innerWidth]);
 
   return (
-    <div className={openSidebar ? "nav" : "hide"}>
+    <div className={ctx.openSidebar ? "nav" : "hide"}>
       {/* search input at top of sidebar */}
       <NavSearch />
 

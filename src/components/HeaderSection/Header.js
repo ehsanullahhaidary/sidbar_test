@@ -8,8 +8,11 @@ import LanguageIcon from "@mui/icons-material/Language";
 import FullscreenIcon from "@mui/icons-material/Fullscreen";
 import MenuIcon from "@mui/icons-material/Menu";
 import "./Header.css";
+import AuthContext from "../../store/auth-context";
+import { useContext } from "react";
+import { useCallback } from "react";
 
-function Header({ togglelang, toggleSidebar, openSidebarHandler }) {
+function Header() {
   // header timer state and setup start
   const [getTime, setTime] = useState(new Date());
   useEffect(() => {
@@ -17,14 +20,16 @@ function Header({ togglelang, toggleSidebar, openSidebarHandler }) {
     return function cleanup() {
       clearInterval(timer);
     };
-  });
+  }, []);
   // timer setup end
+
+  const ctx = useContext(AuthContext);
 
   return (
     <div className="header">
       {/* header right side starts here */}
       <div className="header__right-side">
-        <MenuIcon className="menu" onClick={openSidebarHandler} />
+        <MenuIcon className="menu" onClick={ctx.openSidebarHandler} />
         <span className="header__right-side--user_name">Abdullah</span>
       </div>
 
@@ -41,7 +46,7 @@ function Header({ togglelang, toggleSidebar, openSidebarHandler }) {
         <TurnRightIcon className="icon header__left-side--turn-right" />
         <CopyrightIcon className="icon" />
         <NotificationsIcon className="bell icon" />
-        <LanguageIcon onClick={togglelang} className="icon" />
+        <LanguageIcon onClick={ctx.togglelang} className="icon" />
         <FullscreenIcon className="icon" />
       </div>
       {/* header left side ends here */}

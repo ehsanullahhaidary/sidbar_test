@@ -3,13 +3,18 @@ import "./Content.css";
 import { useEffect } from "react";
 import { useState } from "react";
 import VideoContainer from "./VideoSection/VideoContainer";
+import { useContext } from "react";
+import AuthContext from "../store/auth-context";
 
-function Content({ openSidebar, setOpenSideBar, direction }) {
+function Content() {
   // setup for mobile size and pc sizes to set dark screen on contents or not
   const [mobileSize, setMobileSize] = useState(false);
+
+  const ctx = useContext(AuthContext);
+
   useEffect(() => {
     if (window.innerWidth < 500) {
-      if (openSidebar === true) {
+      if (ctx.openSidebar) {
         setMobileSize(true);
       } else {
         setMobileSize(false);
@@ -17,21 +22,21 @@ function Content({ openSidebar, setOpenSideBar, direction }) {
     } else {
       setMobileSize(false);
     }
-  }, [openSidebar]);
+  }, [ctx.openSidebar]);
 
   return (
     <div
       onClick={() => {
-        if (openSidebar === true && window.innerWidth < 500) {
-          setOpenSideBar(false);
+        if (ctx.openSidebar && window.innerWidth < 500) {
+          ctx.setOpenSideBar(false);
         }
       }}
       className={
         mobileSize
           ? "darken main-content"
-          : "main-content" && openSidebar && direction === "rtl"
+          : "main-content" && ctx.openSidebar && ctx.direction === "rtl"
           ? "main-content margin"
-          : "main-content" && openSidebar && direction === "ltr"
+          : "main-content" && ctx.openSidebar && ctx.direction === "ltr"
           ? "main-content margin-left"
           : "main-content"
       }

@@ -17,6 +17,7 @@ import Ahmad from "./components/testComponents/Ahmad";
 import BackUp from "./components/testComponents/BackUp";
 import Info from "./components/testComponents/Info";
 import Exit from "./components/testComponents/Exit";
+import AuthContext from "./store/auth-context";
 
 function App() {
   // screen direction useState
@@ -57,35 +58,26 @@ function App() {
   }, []);
 
   return (
-    <div className="app">
+    // <div className="app">
+    <AuthContext.Provider
+      value={{
+        openSidebar: openSidebar,
+        direction: direction,
+        showSidebar: showSidebar,
+        togglelang: toggleDirection,
+        openSidebarHandler: openSidebarHandler,
+        setOpenSideBar: setOpenSideBar,
+      }}
+    >
       <BrowserRouter>
-        <Header
-          togglelang={toggleDirection}
-          openSidebarHandler={openSidebarHandler}
-        />
-        <Sidebar
-          openSidebarHandler={openSidebarHandler}
-          openSidebar={openSidebar}
-          showSidebar={showSidebar}
-          setOpenSideBar={setOpenSideBar}
-        />
+        <Header />
+        <Sidebar />
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Content
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-                className="content"
-              />
-            }
-          />
+          <Route path="/" element={<Content />} />
           <Route
             path="/ehsan"
             element={
               <Ehsan
-                direction={direction}
                 setOpenSideBar={setOpenSideBar}
                 openSidebar={openSidebar}
               />
@@ -185,7 +177,8 @@ function App() {
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
-    </div>
+    </AuthContext.Provider>
+    // </div>
   );
 }
 
