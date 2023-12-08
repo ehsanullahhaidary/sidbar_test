@@ -1,13 +1,18 @@
 import { useEffect } from "react";
 import "./tempCss.css";
 import { useState } from "react";
+import { useContext } from "react";
+import AuthContext from "../../store/auth-context";
 
-export default function Settings({ openSidebar, setOpenSideBar, direction }) {
+export default function Settings() {
   // setup for mobile size and pc sizes to set dark screen on contents or not
   const [mobileSize, setMobileSize] = useState(false);
+
+  const ctx = useContext(AuthContext);
+
   useEffect(() => {
     if (window.innerWidth < 500) {
-      if (openSidebar === true) {
+      if (ctx.openSidebar) {
         setMobileSize(true);
       } else {
         setMobileSize(false);
@@ -15,28 +20,28 @@ export default function Settings({ openSidebar, setOpenSideBar, direction }) {
     } else {
       setMobileSize(false);
     }
-  }, [openSidebar]);
+  }, [ctx.openSidebar]);
 
   return (
     <div
       onClick={() => {
-        if (openSidebar === true && window.innerWidth < 500) {
-          setOpenSideBar(false);
+        if (ctx.openSidebar && window.innerWidth < 500) {
+          ctx.setOpenSideBar(false);
         }
       }}
       className={
         mobileSize
           ? "darken content"
-          : "content" && openSidebar && direction === "rtl"
+          : "content" && ctx.openSidebar && ctx.direction === "rtl"
           ? "content margin"
-          : "content" && openSidebar && direction === "ltr"
+          : "content" && ctx.openSidebar && ctx.direction === "ltr"
           ? "content margin-left"
           : "content"
       }
     >
       <div id="temp-page">
         <h1>Settings Page</h1>
-        <p>Setup your settings.</p>
+        <p>if any problem, contact me</p>
       </div>
     </div>
   );

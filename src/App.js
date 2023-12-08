@@ -74,105 +74,16 @@ function App() {
         <Sidebar />
         <Routes>
           <Route path="/" element={<Content />} />
-          <Route
-            path="/ehsan"
-            element={
-              <Ehsan
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
-          <Route
-            path="/nasim"
-            element={
-              <Nasim
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
-          <Route
-            path="/mustafa"
-            element={
-              <Mustafa
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
-          <Route
-            path="/settings"
-            element={
-              <Settings
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
-          <Route
-            path="/hamid"
-            element={
-              <Hamid
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
-          <Route
-            path="/raziq"
-            element={
-              <Raziq
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
-          <Route
-            path="/ahmad"
-            element={
-              <Ahmad
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
-          <Route
-            path="/backup"
-            element={
-              <BackUp
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
-          <Route
-            path="/info"
-            element={
-              <Info
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
-          <Route
-            path="/exit"
-            element={
-              <Exit
-                direction={direction}
-                setOpenSideBar={setOpenSideBar}
-                openSidebar={openSidebar}
-              />
-            }
-          />
+          <Route path="/ehsan" element={<Ehsan />} />
+          <Route path="/nasim" element={<Nasim />} />
+          <Route path="/mustafa" element={<Mustafa />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/hamid" element={<Hamid />} />
+          <Route path="/raziq" element={<Raziq />} />
+          <Route path="/ahmad" element={<Ahmad />} />
+          <Route path="/backup" element={<BackUp />} />
+          <Route path="/info" element={<Info />} />
+          <Route path="/exit" element={<Exit />} />
 
           <Route path="*" element={<ErrorPage />} />
         </Routes>

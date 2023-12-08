@@ -2,13 +2,18 @@ import React from "react";
 import "./tempCss.css";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useContext } from "react";
+import AuthContext from "../../store/auth-context";
 
-function Hamid({ openSidebar, setOpenSideBar, direction }) {
+function Hamid() {
   // setup for mobile size and pc sizes to set dark screen on contents or not
   const [mobileSize, setMobileSize] = useState(false);
+
+  const ctx = useContext(AuthContext);
+
   useEffect(() => {
     if (window.innerWidth < 500) {
-      if (openSidebar === true) {
+      if (ctx.openSidebar) {
         setMobileSize(true);
       } else {
         setMobileSize(false);
@@ -16,21 +21,21 @@ function Hamid({ openSidebar, setOpenSideBar, direction }) {
     } else {
       setMobileSize(false);
     }
-  }, [openSidebar]);
+  }, [ctx.openSidebar]);
 
   return (
     <div
       onClick={() => {
-        if (openSidebar === true && window.innerWidth < 500) {
-          setOpenSideBar(false);
+        if (ctx.openSidebar && window.innerWidth < 500) {
+          ctx.setOpenSideBar(false);
         }
       }}
       className={
         mobileSize
           ? "darken content"
-          : "content" && openSidebar && direction === "rtl"
+          : "content" && ctx.openSidebar && ctx.direction === "rtl"
           ? "content margin"
-          : "content" && openSidebar && direction === "ltr"
+          : "content" && ctx.openSidebar && ctx.direction === "ltr"
           ? "content margin-left"
           : "content"
       }
