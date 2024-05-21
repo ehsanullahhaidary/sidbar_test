@@ -1,15 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./tempCss.css";
 import { useEffect } from "react";
 import { useState } from "react";
+import { useContext } from "react";
 import AuthContext from "../../store/auth-context";
 
-function Ehsan({ openSidebar, setOpenSideBar }) {
+function Ehsan() {
   // setup for mobile size and pc sizes to set dark screen on contents or not
   const [mobileSize, setMobileSize] = useState(false);
+
+  const ctx = useContext(AuthContext);
+
   useEffect(() => {
     if (window.innerWidth < 500) {
-      if (openSidebar === true) {
+      if (ctx.openSidebar) {
         setMobileSize(true);
       } else {
         setMobileSize(false);
@@ -17,23 +21,21 @@ function Ehsan({ openSidebar, setOpenSideBar }) {
     } else {
       setMobileSize(false);
     }
-  }, [openSidebar]);
-
-  const ctx = useContext(AuthContext);
+  }, [ctx.openSidebar]);
 
   return (
     <div
       onClick={() => {
-        if (openSidebar === true && window.innerWidth < 500) {
-          setOpenSideBar(false);
+        if (ctx.openSidebar && window.innerWidth < 500) {
+          ctx.setOpenSideBar(false);
         }
       }}
       className={
         mobileSize
           ? "darken content"
-          : "content" && openSidebar && ctx.direction === "rtl"
+          : "content" && ctx.openSidebar && ctx.direction === "rtl"
           ? "content margin"
-          : "content" && openSidebar && ctx.direction === "ltr"
+          : "content" && ctx.openSidebar && ctx.direction === "ltr"
           ? "content margin-left"
           : "content"
       }
